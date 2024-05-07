@@ -189,6 +189,11 @@ module.exports = (app, { getRouter }) => {
 
     const { shouldDraft, version, tag, name } = input
 
+    log({
+      context,
+      message: `Creating new release info from vals version ${version} tag ${tag} name ${name}`,
+    })
+
     const releaseInfo = generateReleaseInfo({
       context,
       commits,
